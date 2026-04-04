@@ -1,0 +1,4 @@
+cvegeo,cve_mun,condition,description
+99998,998,id_estado = 33 (entidad desconocida),Unknown state in source data
+XX998,998,municipio = 'SIN MUNICIPIO DE REFERENCIA',No municipal reference in source
+XX999,999,municipio = 'SE DESCONOCE',Municipality unknown in source

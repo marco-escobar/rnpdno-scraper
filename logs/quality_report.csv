@@ -1,0 +1,5 @@
+dataset,schema_ok,total_rows,missing_cvegeo,missing_state,duplicates,invalid_year,invalid_month,sex_total_mismatch,match_rate_pct
+rnpdno_total,true,57446,0,0,218,0,0,0,100.0
+rnpdno_disappeared_not_located,true,34644,0,0,86,0,0,0,100.0
+rnpdno_located_alive,true,37419,0,0,114,0,0,0,100.0
+rnpdno_located_dead,true,9936,0,0,4,0,0,0,100.0

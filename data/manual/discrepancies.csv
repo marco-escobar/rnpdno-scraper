@@ -1,0 +1,72 @@
+dataset,id_estado,municipio_raw,municipio_norm,row_count,total_persons,issue_type,notes
+rnpdno_total,33,SE DESCONOCE,se desconoce,68,152,unknown_state,id_estado=33; municipio not in AGEEML
+rnpdno_total,33,SIN MUNICIPIO DE REFERENCIA,sin municipio de referencia,33,65,unknown_state,id_estado=33; municipio not in AGEEML
+rnpdno_total,33,XALAPA,xalapa,1,1,possible_wrong_state,id_estado=33 but 'XALAPA' exists under ['30']
+rnpdno_total,2,DURANGO,durango,1,1,possible_wrong_state,Not under estado 02; found under ['10']
+rnpdno_total,3,LEÓN,leon,1,1,possible_wrong_state,Not under estado 03; found under ['11']
+rnpdno_total,4,PUEBLA,puebla,1,1,possible_wrong_state,Not under estado 04; found under ['21']
+rnpdno_total,8,CANANEA,cananea,1,1,possible_wrong_state,Not under estado 08; found under ['26']
+rnpdno_total,8,ROSARIO,rosario,2,2,possible_wrong_state,"Not under estado 08; found under ['25', '26']"
+rnpdno_total,9,OCAMPO,ocampo,1,1,possible_wrong_state,"Not under estado 09; found under ['05', '08', '10', '11', '16', '28']"
+rnpdno_total,9,TIJUANA,tijuana,1,1,possible_wrong_state,Not under estado 09; found under ['02']
+rnpdno_total,9,TIZAYUCA,tizayuca,1,1,possible_wrong_state,Not under estado 09; found under ['13']
+rnpdno_total,10,CHIHUAHUA,chihuahua,1,1,possible_wrong_state,Not under estado 10; found under ['08']
+rnpdno_total,10,GUADALAJARA,guadalajara,1,1,possible_wrong_state,Not under estado 10; found under ['14']
+rnpdno_total,10,SINALOA,sinaloa,4,4,possible_wrong_state,Not under estado 10; found under ['25']
+rnpdno_total,10,TRINCHERAS,trincheras,1,1,possible_wrong_state,Not under estado 10; found under ['26']
+rnpdno_total,10,ZACATECAS,zacatecas,1,1,possible_wrong_state,Not under estado 10; found under ['32']
+rnpdno_total,12,JOSÉ AZUETA,jose azueta,58,123,possible_wrong_state,Not under estado 12; found under ['30']
+rnpdno_total,14,AGUASCALIENTES,aguascalientes,1,1,possible_wrong_state,Not under estado 14; found under ['01']
+rnpdno_total,15,IZTAPALAPA,iztapalapa,1,1,possible_wrong_state,Not under estado 15; found under ['09']
+rnpdno_total,15,PUERTO VALLARTA,puerto vallarta,1,1,possible_wrong_state,Not under estado 15; found under ['14']
+rnpdno_total,16,SANTA CRUZ DE JUVENTINO ROSAS,santa cruz de juventino rosas,1,1,possible_wrong_state,Not under estado 16; found under ['11']
+rnpdno_total,18,PUERTO VALLARTA,puerto vallarta,1,1,possible_wrong_state,Not under estado 18; found under ['14']
+rnpdno_total,18,TIJUANA,tijuana,1,1,possible_wrong_state,Not under estado 18; found under ['02']
+rnpdno_total,19,CARMEN,carmen,99,463,possible_wrong_state,Not under estado 19; found under ['04']
+rnpdno_total,21,MALTRATA,maltrata,1,1,possible_wrong_state,Not under estado 21; found under ['30']
+rnpdno_total,22,CHIHUAHUA,chihuahua,1,1,possible_wrong_state,Not under estado 22; found under ['08']
+rnpdno_total,23,CAMPECHE,campeche,1,1,possible_wrong_state,Not under estado 23; found under ['04']
+rnpdno_total,25,NOGALES,nogales,1,1,possible_wrong_state,"Not under estado 25; found under ['26', '30']"
+rnpdno_total,25,PUEBLO NUEVO,pueblo nuevo,1,1,possible_wrong_state,"Not under estado 25; found under ['10', '11']"
+rnpdno_total,30,SAN JUAN BAUTISTA TUXTEPEC,san juan bautista tuxtepec,1,1,possible_wrong_state,Not under estado 30; found under ['20']
+rnpdno_total,30,TAMPICO,tampico,1,1,possible_wrong_state,Not under estado 30; found under ['28']
+rnpdno_total,31,CAMPECHE,campeche,1,1,possible_wrong_state,Not under estado 31; found under ['04']
+rnpdno_disappeared_not_located,33,SE DESCONOCE,se desconoce,54,98,unknown_state,id_estado=33; municipio not in AGEEML
+rnpdno_disappeared_not_located,33,SIN MUNICIPIO DE REFERENCIA,sin municipio de referencia,33,64,unknown_state,id_estado=33; municipio not in AGEEML
+rnpdno_disappeared_not_located,33,XALAPA,xalapa,1,1,possible_wrong_state,id_estado=33 but 'XALAPA' exists under ['30']
+rnpdno_disappeared_not_located,2,DURANGO,durango,1,1,possible_wrong_state,Not under estado 02; found under ['10']
+rnpdno_disappeared_not_located,3,LEÓN,leon,1,1,possible_wrong_state,Not under estado 03; found under ['11']
+rnpdno_disappeared_not_located,8,CANANEA,cananea,1,1,possible_wrong_state,Not under estado 08; found under ['26']
+rnpdno_disappeared_not_located,8,ROSARIO,rosario,2,2,possible_wrong_state,"Not under estado 08; found under ['25', '26']"
+rnpdno_disappeared_not_located,9,OCAMPO,ocampo,1,1,possible_wrong_state,"Not under estado 09; found under ['05', '08', '10', '11', '16', '28']"
+rnpdno_disappeared_not_located,9,TIJUANA,tijuana,1,1,possible_wrong_state,Not under estado 09; found under ['02']
+rnpdno_disappeared_not_located,10,CHIHUAHUA,chihuahua,1,1,possible_wrong_state,Not under estado 10; found under ['08']
+rnpdno_disappeared_not_located,10,GUADALAJARA,guadalajara,1,1,possible_wrong_state,Not under estado 10; found under ['14']
+rnpdno_disappeared_not_located,10,SINALOA,sinaloa,4,4,possible_wrong_state,Not under estado 10; found under ['25']
+rnpdno_disappeared_not_located,10,TRINCHERAS,trincheras,1,1,possible_wrong_state,Not under estado 10; found under ['26']
+rnpdno_disappeared_not_located,10,ZACATECAS,zacatecas,1,1,possible_wrong_state,Not under estado 10; found under ['32']
+rnpdno_disappeared_not_located,12,JOSÉ AZUETA,jose azueta,52,100,possible_wrong_state,Not under estado 12; found under ['30']
+rnpdno_disappeared_not_located,15,IZTAPALAPA,iztapalapa,1,1,possible_wrong_state,Not under estado 15; found under ['09']
+rnpdno_disappeared_not_located,15,PUERTO VALLARTA,puerto vallarta,1,1,possible_wrong_state,Not under estado 15; found under ['14']
+rnpdno_disappeared_not_located,16,SANTA CRUZ DE JUVENTINO ROSAS,santa cruz de juventino rosas,1,1,possible_wrong_state,Not under estado 16; found under ['11']
+rnpdno_disappeared_not_located,18,PUERTO VALLARTA,puerto vallarta,1,1,possible_wrong_state,Not under estado 18; found under ['14']
+rnpdno_disappeared_not_located,18,TIJUANA,tijuana,1,1,possible_wrong_state,Not under estado 18; found under ['02']
+rnpdno_disappeared_not_located,19,CARMEN,carmen,52,111,possible_wrong_state,Not under estado 19; found under ['04']
+rnpdno_disappeared_not_located,21,MALTRATA,maltrata,1,1,possible_wrong_state,Not under estado 21; found under ['30']
+rnpdno_disappeared_not_located,22,CHIHUAHUA,chihuahua,1,1,possible_wrong_state,Not under estado 22; found under ['08']
+rnpdno_disappeared_not_located,23,CAMPECHE,campeche,1,1,possible_wrong_state,Not under estado 23; found under ['04']
+rnpdno_disappeared_not_located,25,NOGALES,nogales,1,1,possible_wrong_state,"Not under estado 25; found under ['26', '30']"
+rnpdno_disappeared_not_located,25,PUEBLO NUEVO,pueblo nuevo,1,1,possible_wrong_state,"Not under estado 25; found under ['10', '11']"
+rnpdno_disappeared_not_located,30,SAN JUAN BAUTISTA TUXTEPEC,san juan bautista tuxtepec,1,1,possible_wrong_state,Not under estado 30; found under ['20']
+rnpdno_disappeared_not_located,30,TAMPICO,tampico,1,1,possible_wrong_state,Not under estado 30; found under ['28']
+rnpdno_located_alive,33,SE DESCONOCE,se desconoce,29,50,unknown_state,id_estado=33; municipio not in AGEEML
+rnpdno_located_alive,33,SIN MUNICIPIO DE REFERENCIA,sin municipio de referencia,1,1,unknown_state,id_estado=33; municipio not in AGEEML
+rnpdno_located_alive,4,PUEBLA,puebla,1,1,possible_wrong_state,Not under estado 04; found under ['21']
+rnpdno_located_alive,9,TIZAYUCA,tizayuca,1,1,possible_wrong_state,Not under estado 09; found under ['13']
+rnpdno_located_alive,12,JOSÉ AZUETA,jose azueta,15,22,possible_wrong_state,Not under estado 12; found under ['30']
+rnpdno_located_alive,14,AGUASCALIENTES,aguascalientes,1,1,possible_wrong_state,Not under estado 14; found under ['01']
+rnpdno_located_alive,19,CARMEN,carmen,89,328,possible_wrong_state,Not under estado 19; found under ['04']
+rnpdno_located_alive,31,CAMPECHE,campeche,1,1,possible_wrong_state,Not under estado 31; found under ['04']
+rnpdno_located_dead,33,SE DESCONOCE,se desconoce,4,4,unknown_state,id_estado=33; municipio not in AGEEML
+rnpdno_located_dead,12,JOSÉ AZUETA,jose azueta,1,1,possible_wrong_state,Not under estado 12; found under ['30']
+rnpdno_located_dead,19,CARMEN,carmen,17,20,possible_wrong_state,Not under estado 19; found under ['04']

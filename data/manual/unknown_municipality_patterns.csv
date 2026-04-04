@@ -1,0 +1,6 @@
+pattern,sentinel_action
+DESCONOCE,"cvegeo=null, match_type=unknown"
+SE DESCONOCE,"cvegeo=null, match_type=unknown"
+SIN MUNICIPIO,"cvegeo=null, match_type=unknown"
+NO ESPECIFICADO,"cvegeo=null, match_type=unknown"
+NO IDENTIFICADO,"cvegeo=null, match_type=unknown"
