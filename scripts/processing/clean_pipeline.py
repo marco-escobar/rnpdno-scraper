@@ -552,14 +552,33 @@ def assemble_output(df: pl.DataFrame) -> pl.DataFrame:
 # ---------------------------------------------------------------------------
 # 8. Remove ghost duplicates
 # ---------------------------------------------------------------------------
-def remove_duplicates(df: pl.DataFrame, dataset_name: str) -> pl.DataFrame:
-    """Remove exact duplicate rows (source-data artefacts) and sort."""
+def aggregate_duplicates(df: pl.DataFrame, dataset_name: str) -> pl.DataFrame:
+    """Aggregate rows that share (cvegeo, year, month, status_id).
+
+    Duplicates arise when B1 state corrections reassign a raw record to
+    a state that already has its own entry for that municipality-month
+    (e.g., AGUASCALIENTES recorded under Jalisco is corrected to state 01,
+    colliding with the real Aguascalientes row).  Person counts are summed;
+    the first non-null state/municipality name is kept.
+    """
     logger = logging.getLogger(__name__)
+    key_cols = ["cvegeo", "year", "month", "status_id"]
     n_before = len(df)
-    df = df.unique()
+
+    df = df.group_by(key_cols).agg([
+        pl.col("cve_estado").first(),
+        pl.col("state").first(),
+        pl.col("cve_mun").first(),
+        pl.col("municipality").first(),
+        pl.col("male").sum(),
+        pl.col("female").sum(),
+        pl.col("undefined").sum(),
+        pl.col("total").sum(),
+    ]).select(TARGET_SCHEMA)
+
     n_removed = n_before - len(df)
     if n_removed:
-        logger.info("[%s] Removed %d duplicate rows", dataset_name, n_removed)
+        logger.info("[%s] Aggregated %d duplicate rows (summed counts)", dataset_name, n_removed)
     return df.sort(["cvegeo", "year", "month"])
 
 
@@ -663,7 +682,7 @@ def main():
         out = assemble_output(df)
 
         # 9. Remove duplicates
-        out = remove_duplicates(out, ds_name)
+        out = aggregate_duplicates(out, ds_name)
 
         # 10. Quality check
         all_qc.append(quality_check(out, ds_name))
