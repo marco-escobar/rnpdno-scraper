@@ -30,9 +30,7 @@ This repository contains the web scraper, cleaning pipeline, and manual override
 │   │   └── ageeml_catalog.csv               # INEGI AGEEML reference (2,478 municipalities)
 │   ├── raw/rnpdno/consolidated/             # Input: consolidated Parquet files
 │   └── processed/                           # Output: 4 processed CSV files
-├── manuscript/
-│   ├── dib.tex                              # Data in Brief manuscript
-│   └── figures/                             # Generated figures
+├── figures/                                 # Generated overview figures
 ├── environment.yml                          # Conda environment
 └── README.md
 ```
@@ -79,7 +77,7 @@ This runs the full pipeline:
 9. Remove duplicate rows
 10. Write processed CSVs to `data/processed/`
 
-Output: 4 CSV files with 12-column schema (see manuscript for details).
+Output: 4 CSV files with 12-column schema.
 
 ### 3. Generate figures
 
@@ -87,7 +85,7 @@ Output: 4 CSV files with 12-column schema (see manuscript for details).
 python scripts/processing/generate_figures.py
 ```
 
-Produces `manuscript/figures/fig1_monthly_trend.pdf` and `manuscript/figures/fig2_state_distribution.pdf`.
+Produces `figures/fig1_monthly_trend.pdf` and `figures/fig2_state_distribution.pdf`.
 
 ## Data
 

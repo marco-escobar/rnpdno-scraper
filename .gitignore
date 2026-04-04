@@ -10,4 +10,5 @@ data/processed/
 .ipynb_checkpoints/
 .~lock.*
 manuscript/
+figures/
 .claude/

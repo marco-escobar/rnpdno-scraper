@@ -6,8 +6,8 @@ Usage
 
 Outputs
 -------
-    manuscript/figures/fig1_monthly_trend.pdf
-    manuscript/figures/fig2_state_distribution.pdf
+    figures/fig1_monthly_trend.pdf
+    figures/fig2_state_distribution.pdf
 """
 
 from pathlib import Path
@@ -20,7 +20,7 @@ import pandas as pd
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed"
-FIGURES_DIR = PROJECT_ROOT / "manuscript" / "figures"
+FIGURES_DIR = PROJECT_ROOT / "figures"
 
 
 def fig1_monthly_trend():
