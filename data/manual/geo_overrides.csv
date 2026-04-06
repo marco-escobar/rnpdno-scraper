@@ -33,3 +33,5 @@ raw_id_estado,raw_municipio,cvegeo,notes,source_dataset
 08,ROSARIO,08056,"INEGI compendio municipal confirma Rosario Chihuahua = CVEGEO 08056; cabecera/localidad: Valle del Rosario.",
 20,SAN PEDRO TOTOLAPA,20333,AGEEML: Oaxaca municipio oficial San Pedro Totolápam (CVEGEO 20333). Nombre en fuente abreviado; única coincidencia en estado 20.,
 20,SANTIAGO CHAZUMBA,20459,AGEEML: Oaxaca municipio oficial Villa de Santiago Chazumba (CVEGEO 20459). Nombre en fuente abreviado; única coincidencia en estado 20.,
+29,ZITLALTEPEC,29037,"AGEEML: Tlaxcala municipio oficial Ziltlaltépec de Trinidad Sánchez Santos (CVEGEO 29037). Spelling mismatch prevents automatic match.",
+09,TIJUANA,02004,"Source reports state=09 (CDMX) but Tijuana is unique nationwide in AGEEML under Baja California (CVEGEO 02004). Source-data error.",
