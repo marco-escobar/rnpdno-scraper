@@ -475,10 +475,10 @@ def assign_sentinels(df: pl.DataFrame, dataset_name: str) -> pl.DataFrame:
 
     # Unknown state (id_estado == 33)
     pdf.loc[is_unknown_state, "geo_cvegeo"] = "99998"
-    pdf.loc[is_unknown_state, "geo_cve_estado"] = pd.NA
+    pdf.loc[is_unknown_state, "geo_cve_estado"] = "99"
     pdf.loc[is_unknown_state, "geo_state"] = "unknown"
     pdf.loc[is_unknown_state, "match_type"] = "sentinel_unknown_state"
-    pdf.loc[is_unknown_state, "geo_cve_mun"] = pd.NA
+    pdf.loc[is_unknown_state, "geo_cve_mun"] = "998"
     pdf.loc[is_unknown_state, "geo_municipality"] = pd.NA
 
     for label, code in _SENTINEL_MUNI.items():
@@ -541,10 +541,10 @@ def assign_unresolved(df: pl.DataFrame, dataset_name: str) -> pl.DataFrame:
 def assemble_output(df: pl.DataFrame) -> pl.DataFrame:
     """Map internal columns to TARGET_SCHEMA and sort."""
     out = df.select([
-        pl.col("geo_cvegeo").cast(pl.Int64, strict=False).alias("cvegeo"),
-        pl.col("geo_cve_estado").cast(pl.Float64, strict=False).alias("cve_estado"),
+        pl.col("geo_cvegeo").cast(pl.Utf8).str.zfill(5).alias("cvegeo"),
+        pl.col("geo_cve_estado").cast(pl.Utf8).str.strip_chars().str.zfill(2).alias("cve_estado"),
         pl.col("geo_state").alias("state"),
-        pl.col("geo_cve_mun").cast(pl.Int64, strict=False).alias("cve_mun"),
+        pl.col("geo_cve_mun").cast(pl.Utf8).str.strip_chars().str.zfill(3).alias("cve_mun"),
         pl.col("geo_municipality").alias("municipality"),
         pl.col("hombres").alias("male"),
         pl.col("mujeres").alias("female"),
