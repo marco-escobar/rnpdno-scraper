@@ -1,36 +1,35 @@
-raw_municipio,cve_estado,cve_mun,rationale
-DR ARROYO,19,014,INEGI: Doctor Arroyo
-DR GONZALEZ,19,015,INEGI: Doctor González
-DR COSS,19,013,INEGI: Doctor Coss
-GRAL BRAVO,19,017,INEGI: General Bravo
-GRAL ESCOBEDO,19,021,INEGI: General Escobedo
-GRAL TERAN,19,023,INEGI: General Terán
-GRAL TREVINO,19,024,INEGI: General Treviño
-GRAL ZARAGOZA,19,019,INEGI: General Zaragoza
-GRAL ZUAZUA,19,025,INEGI: General Zuazua
-TLALTIZAPAN,17,028,INEGI: Tlaltizapán de Zapata
-JONACATEPEC,17,012,INEGI: Jonacatepec de Leandro Valle
-ZACATEPEC DE HIDALGO,17,032,INEGI: Zacatepec
-HUILOAPAN,30,076,INEGI: Huiloapan de Cuauhtémoc
-MEDELLIN,30,105,INEGI: Medellín de Bravo
-CAZONES,30,038,INEGI: Cazones de Herrera
-TEMAPACHE,30,010,INEGI: Álamo Temapache
-TUXPAM,30,189,INEGI: Tuxpan (alternate spelling)
-MAGDALENA CONTRERAS,09,008,INEGI: La Magdalena Contreras
-BATOPILAS,08,008,INEGI: Batopilas de Manuel Gómez Morín
-TEMOSACHI,08,063,INEGI: Temósachic
-DOLORES HIDALGO,11,014,INEGI: Dolores Hidalgo Cuna de la Independencia Nacional
-SILAO,11,037,INEGI: Silao de la Victoria
-CUATROCIENEGAS,05,007,INEGI: Cuatro Ciénegas
-ACAMBAY,15,001,INEGI: Acambay de Ruíz Castañeda
-TLAQUEPAQUE,14,098,INEGI: San Pedro Tlaquepaque
-ALTZAYANCA,29,003,Direct match exists but ambiguous
-ZITLALTEPEC,29,057,INEGI: Zitlaltépec de Trinidad Sánchez Santos
-YAUHQUEMECAN,29,043,Direct match
-HUAJUAPAN DE LEON,20,039,INEGI: Heroica Ciudad de Huajuapan de León
-JUCHITAN DE ZARAGOZA,20,043,INEGI: Heroica Ciudad de Juchitán de Zaragoza
-SAN PEDRO TOTOLAPA,20,302,INEGI: San Pedro Totolápam
-SAN PEDRO MIXTEPEC JUQUILA,20,318,District disambiguation
-SAN PEDRO MIXTEPEC MIAHUATLAN,20,319,District disambiguation
-NOGALES,,,Appears with id_estado=25 (Sinaloa) but Nogales is in Sonora
-PUEBLO NUEVO,,,"Ambiguous: exists in multiple states, wrong hint"
+raw_id_estado,raw_municipio,cvegeo,notes,source_dataset
+14,TLAQUEPAQUE,14098,AGEEML/INEGI: municipio oficial San Pedro Tlaquepaque (código INEGI 14098).,
+23,SOLIDARIDAD,23008,Nombre municipal cambió oficialmente a Playa del Carmen (marzo 2025) pero mantiene código INEGI 23008; mapear por cvegeo.,
+19,CARMEN,19010,INEGI Compendio 2010: Carmen (Nuevo León) clave geoestadística 19010.,
+11,SILAO,11037,Municipio oficial Silao de la Victoria; código INEGI 11037.,
+09,MAGDALENA CONTRERAS,09008,INEGI Compendio delegacional 2010: La Magdalena Contreras clave geoestadística 09008.,
+30,TÚXPAM,30189,Municipio es Tuxpan (30189); "Túxpam de Rodríguez Cano" es cabecera/localidad.,
+11,DOLORES HIDALGO,11014,INEGI Compendio 2010: Dolores Hidalgo Cuna de la Independencia Nacional clave geoestadística 11014.,
+30,MEDELLÍN,30105,INEGI Compendio 2010: Medellín (Medellín de Bravo) clave geoestadística 30105.,
+17,TLALTIZAPÁN,17024,INEGI Compendio 2010: Tlaltizapán (Morelos) clave geoestadística 17024.,
+12,JOSÉ AZUETA,12038,INEGI: municipio renombrado a Zihuatanejo de Azueta (2008); compendio 2010 muestra cvegeo 12038.,
+30,TEMAPACHE,30160,AGEEML match in Veracruz: municipio oficial Álamo Temapache (CVEGEO 30160).,
+17,ZACATEPEC DE HIDALGO,17031,AGEEML match en Morelos: municipio oficial Zacatepec (CVEGEO 17031).,
+15,ACAMBAY,15001,AGEEML match en México: municipio oficial Acambay de Ruíz Castañeda (CVEGEO 15001).,
+07,CINTALAPA,07017,AGEEML match en Chiapas: municipio oficial Cintalapa de Figueroa (CVEGEO 07017).,
+29,YAUHQUEMECAN,29043,AGEEML match en Tlaxcala: municipio oficial Yauhquemehcan (CVEGEO 29043).,
+17,JONACATEPEC,17013,AGEEML match en Morelos: municipio oficial Jonacatepec de Leandro Valle (CVEGEO 17013).,
+20,JUCHITÁN DE ZARAGOZA,20043,AGEEML match en Oaxaca: municipio oficial Heroica Ciudad de Juchitán de Zaragoza (CVEGEO 20043).,
+30,CAZONES,30033,AGEEML match en Veracruz: municipio oficial Cazones de Herrera (CVEGEO 30033).,
+30,HUILOAPAN,30074,AGEEML match en Veracruz: municipio oficial Huiloapan de Cuauhtémoc (CVEGEO 30074).,
+24,AHUALULCO,24001,AGEEML match en San Luis Potosí: municipio oficial Ahualulco del Sonido 13 (CVEGEO 24001).,
+05,CUATROCIÉNEGAS,05007,AGEEML: Coahuila municipio oficial Cuatro Ciénegas (CVEGEO 05007).,
+08,BATOPILAS,08008,AGEEML: Chihuahua municipio oficial Batopilas de Manuel Gómez Morín (CVEGEO 08008).,
+08,TEMÓSACHI,08063,AGEEML: Chihuahua municipio oficial Temósachic (CVEGEO 08063). Única entrada en AGEEML para este nombre.,
+12,APAXTLA,12006,AGEEML: Guerrero municipio oficial Apaxtla de Castrejón (CVEGEO 12006).,
+20,HUAJUAPAN DE LEÓN,20039,AGEEML: Oaxaca municipio oficial Heroica Ciudad de Huajuapan de León (CVEGEO 20039).,
+20,MIAHUATLÁN DE PORFIRIO DÍAZ,20059,AGEEML: Oaxaca municipio oficial Heroica Ciudad de Miahuatlán de Porfirio Díaz (CVEGEO 20059).,
+20,VILLA DE TUTUTEPEC DE MELCHOR OCAMPO,20334,AGEEML: Oaxaca municipio oficial Villa de Tututepec (CVEGEO 20334). Corregido de 20479 (Santiago Nejapilla).,
+29,ALTZAYANCA,29004,AGEEML: Tlaxcala municipio oficial Atltzayanca (CVEGEO 29004). Corregido de 29003 (Atlangatepec).,
+20,SAN PEDRO MIXTEPEC-JUQUILA,20318,"INEGI confirms CVEGEO 20318 corresponds to San Pedro Mixtepec -Dto. 22 (Juquila).",
+20,SAN PEDRO MIXTEPEC-MIAHUATLAN,20319,"INEGI confirms CVEGEO 20319 corresponds to San Pedro Mixtepec -Dto. 26 (Miahuatlan).",
+25,NOGALES,26043,"Manual override: source reports state=25 (Sinaloa) but AGEEML has Nogales in Sonora (CVEGEO 26043). Geographic proximity supports correction.",
+08,ROSARIO,08056,"INEGI compendio municipal confirma Rosario Chihuahua = CVEGEO 08056; cabecera/localidad: Valle del Rosario.",
+20,SAN PEDRO TOTOLAPA,20333,AGEEML: Oaxaca municipio oficial San Pedro Totolápam (CVEGEO 20333). Nombre en fuente abreviado; única coincidencia en estado 20.,
+20,SANTIAGO CHAZUMBA,20459,AGEEML: Oaxaca municipio oficial Villa de Santiago Chazumba (CVEGEO 20459). Nombre en fuente abreviado; única coincidencia en estado 20.,
