@@ -168,6 +168,16 @@ def load_and_normalize(raw_path: Path, dataset_name: str) -> pl.DataFrame:
         .alias("cve_estado_raw")
     )
 
+    # Deduplicate re-scrape duplicates: when the same source record was
+    # scraped twice, the later row (further down in the consolidated
+    # Parquet) carries the updated counts.  Keep last occurrence.
+    raw_key = ["id_estado", "municipio", "anio", "mes", "id_estatus_victima"]
+    n_before = len(df)
+    df = df.unique(subset=raw_key, keep="last")
+    n_deduped = n_before - len(df)
+    if n_deduped:
+        logger.info("[%s] Raw dedup: removed %d re-scrape duplicate(s), kept last", dataset_name, n_deduped)
+
     logger.info("[%s] %d rows loaded & normalised", dataset_name, len(df))
     return df
 
@@ -376,10 +386,9 @@ def apply_state_corrections(
 def load_overrides(ref: pl.DataFrame) -> dict:
     """Read geo_overrides.csv; return lookup dict.
 
-    Schema: raw_municipio, cve_estado, cve_mun, rationale
-    Key: normalize_text(raw_municipio)
+    Schema: raw_id_estado, raw_municipio, cvegeo, notes, source_dataset
+    Key: (raw_id_estado zero-padded, normalize_text(raw_municipio))
     Value: dict with geo fields (looked up from AGEEML ref)
-    Entries with empty cve_estado/cve_mun are skipped (unresolvable).
     """
     logger = logging.getLogger(__name__)
     path = MANUAL_DIR / "geo_overrides.csv"
@@ -388,7 +397,7 @@ def load_overrides(ref: pl.DataFrame) -> dict:
         return {}
 
     import pandas as pd
-    ov = pd.read_csv(path)
+    ov = pd.read_csv(path, dtype=str)
 
     # Build AGEEML lookup by cvegeo
     ref_pd = ref.select("cvegeo", "cve_estado", "cve_mun", "state", "municipality").to_pandas()
@@ -396,15 +405,11 @@ def load_overrides(ref: pl.DataFrame) -> dict:
 
     override_map = {}
     for _, row in ov.iterrows():
-        # Skip entries with empty cve_estado or cve_mun (unresolvable like NOGALES/PUEBLO NUEVO)
-        if pd.isna(row["cve_estado"]) or pd.isna(row["cve_mun"]):
-            continue
+        raw_id_estado = str(row["raw_id_estado"]).strip().zfill(2)
+        raw_mun = str(row["raw_municipio"]).strip()
+        cvegeo = str(row["cvegeo"]).strip().zfill(5)
 
-        cve_estado = str(int(row["cve_estado"])).zfill(2)
-        cve_mun = str(int(row["cve_mun"])).zfill(3)
-        cvegeo = cve_estado + cve_mun
-
-        key = normalize_text(str(row["raw_municipio"]))
+        key = (raw_id_estado, normalize_text(raw_mun))
 
         if cvegeo in ref_idx.index:
             ref_row = ref_idx.loc[cvegeo]
@@ -418,7 +423,7 @@ def load_overrides(ref: pl.DataFrame) -> dict:
         else:
             logger.warning("Override cvegeo %s not found in AGEEML", cvegeo)
 
-    logger.info("Loaded %d override(s) (skipped unresolvable entries)", len(override_map))
+    logger.info("Loaded %d override(s)", len(override_map))
     return override_map
 
 
@@ -435,7 +440,10 @@ def apply_overrides(
 
     n = 0
     for idx in pdf[pdf["match_type"] == "unmatched"].index:
-        key = pdf.at[idx, "municipio_norm"]
+        est = pdf.at[idx, "cve_estado_raw"]
+        est = str(est).zfill(2) if pd.notna(est) else ""
+        mun = pdf.at[idx, "municipio_norm"]
+        key = (est, mun)
         geo = override_map.get(key)
         if geo:
             for col, val in geo.items():
