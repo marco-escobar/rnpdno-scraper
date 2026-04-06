@@ -19,10 +19,11 @@ This repository contains the web scraper, cleaning pipeline, and manual override
 │   └── processing/
 │       ├── clean_pipeline.py                # Cleaning & geo-normalization pipeline
 │       ├── normalize.py                     # Text normalization utilities
-│       └── generate_figures.py              # Data in Brief overview figures
+│       ├── generate_figures.py              # Data in Brief overview figures
+│       └── audit_output.py                  # Post-pipeline audit (AGEEML cross-check)
 ├── data/
 │   ├── manual/                              # Git-tracked manual overrides
-│   │   ├── geo_overrides.csv                # Municipality name mappings (35 entries)
+│   │   ├── geo_overrides.csv                # Municipality name mappings (34 entries)
 │   │   ├── geo_state_corrections.csv        # B1 state corrections (25 entries)
 │   │   ├── special_geo_cases.csv            # Sentinel code rules (3 entries)
 │   │   └── unknown_municipality_patterns.csv # Unknown patterns (5 entries)
@@ -66,20 +67,28 @@ python scripts/processing/clean_pipeline.py
 ```
 
 This runs the full pipeline:
-1. Load consolidated Parquets
+1. Load consolidated Parquets and deduplicate re-scrape entries (keep last)
 2. Text-normalize municipality and state names
 3. Build AGEEML geographic reference
 4. Apply B1 state corrections (unique-nationwide heuristic)
 5. Two-pass geographic join (standard + aggressive normalization)
-6. Apply manual overrides
+6. Apply manual overrides (state-aware key)
 7. Assign sentinel geo-codes (unknown state, missing municipality)
 8. Assign unresolved records to state 99
-9. Remove duplicate rows
+9. Aggregate B1-collision duplicates (sum counts)
 10. Write processed CSVs to `data/processed/`
 
 Output: 4 CSV files with 12-column schema.
 
-### 3. Generate figures
+### 3. Audit
+
+```bash
+python scripts/processing/audit_output.py
+```
+
+Verifies every row in the 4 processed CSVs against the AGEEML catalog: schema, sex-total consistency, temporal ranges, duplicates, cvegeo/cve_estado/cve_mun cross-check, and cross-status consistency.
+
+### 4. Generate figures
 
 ```bash
 python scripts/processing/generate_figures.py
